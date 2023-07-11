@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="aprobarSolicitud" name="Aprobacion Apertura Cuenta" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+  <decision id="aprobarSolicitud1" name="Aprobación de Apertura de Cuenta">
+    <decisionTable id="DecisionTable_1t59wbj">
+      <input id="InputClause_0bvg9ho" label="Tipo de cuenta solicitada">
+        <inputExpression id="LiteralExpression_1rhw0ht" typeRef="integer">
+          <text>tipoCuenta</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10dchbl" label="Nombre">
+        <inputExpression id="LiteralExpression_1o3irka" typeRef="string">
+          <text>nombre</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_02y4rfa" label="Apellido">
+        <inputExpression id="LiteralExpression_1v6zh60" typeRef="string">
+          <text>apellido</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_08uplur" label="Decision" name="aprobacion" typeRef="boolean" />
+      <rule id="DecisionRule_1n50zez">
+        <inputEntry id="UnaryTests_0td96um">
+          <text>tipoCuenta = "10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gfj5fj">
+          <text>nombre = "Mariano"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lht34e">
+          <text>apellido = "Gondolesi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lqnfq1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05wad0s">
+        <inputEntry id="UnaryTests_11pwzje">
+          <text>tipoCuenta = "27"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mc1g5c">
+          <text>nombre = "Mariano"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uhiyxc">
+          <text>apellido = "Gondolesi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lrppvw">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c8yxsp">
+        <inputEntry id="UnaryTests_1jgjsbr">
+          <text>tipoCuenta = "10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n6gnml">
+          <text>nombre = "Samuel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05uz6a6">
+          <text>apellido = "Gondolesi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10sx7k9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v5fzv9">
+        <inputEntry id="UnaryTests_1rhzht6">
+          <text>tipoCuenta = "27"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x4c2a0">
+          <text>nombre = "Samuel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tq1jdi">
+          <text>apellido = "Gondolesi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lnx5ot">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qrzo0g">
+        <inputEntry id="UnaryTests_0g4l36y">
+          <text>tipoCuenta = "10" or tipoCuenta = "27"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03gpi21">
+          <text>nombre != "Samuel" and nombre != "Mariano"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0opkveg">
+          <text>apellido != "Gondolesi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fl2leq">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0v6vgql">
+      <dmndi:DMNShape id="DMNShape_1qh2j92" dmnElementRef="aprobarSolicitud1">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -22,11 +22,11 @@ public class TipoCuenta implements JavaDelegate {
 
         // System.out.println("Cuit: " + cuit);
         // System.out.println("Persona: " + tipoPersona);
-        System.out.println("Apellido: " + apellido);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Tipo de cuenta: " + tipoCuenta);
-        System.out.println("Tipo de dato de tipoCuenta: " + tipoCuenta.getClass().getName());
-        System.out.println("Emitir Chequera: " + emitirChequera);
+        // System.out.println("Apellido: " + apellido);
+        // System.out.println("Nombre: " + nombre);
+        // System.out.println("Tipo de cuenta: " + tipoCuenta);
+        // System.out.println("Tipo de dato de tipoCuenta: " + tipoCuenta.getClass().getName());
+        // System.out.println("Emitir Chequera: " + emitirChequera);
         // System.out.println("Rubro: " + rubro);
         // System.out.println("Provincia: " + provincia);
         // System.out.println("Solicita Tarjeta de Débito?: " + solicitaTD);
