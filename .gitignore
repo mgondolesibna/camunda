@@ -6,3 +6,7 @@ react/node_modules/
 */node_modules/*
 */node_modules
 poc-camunda-2/camunda-h2-database.*
+poc-camunda-2/target/*
+*/target
+*/taget/*
+poc-camunda-2/target
