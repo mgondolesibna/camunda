@@ -82,6 +82,10 @@ const MyForm = () => {
 
       // Mostrar mensaje de éxito
       message.success('Su solicitud ha sido enviada exitosamente');
+      if (tipoCuenta === '27') {
+    window.location.reload();
+    return;
+  }
 
       // Realizar solicitud GET cada 5 segundos hasta que el campo childActivityInstances.activityId sea "Activity_16s9fbv"
       const intervalId = setInterval(async () => {
@@ -110,6 +114,9 @@ const MyForm = () => {
 
   const handleTipoCuentaChange = (value) => {
     setTipoCuenta(value);
+     if (value !== '10') {
+    setShowSecondForm(false);
+  }
   };
 
   const handleEmitirChequeraChange = (e) => {
