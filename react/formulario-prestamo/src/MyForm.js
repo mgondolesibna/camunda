@@ -9,6 +9,7 @@ const MyForm = () => {
   const [loading, setLoading] = useState(false);
   const [showSecondForm, setShowSecondForm] = useState(false);
   const [responseId, setResponseId] = useState('');
+  
 
   useEffect(() => {
     if (showSecondForm) {
@@ -29,20 +30,36 @@ const MyForm = () => {
         'Authorization': `Basic ${encodedAuthString}`
       };
 
-      const response = await axios.put(
-        '/api/engine/default/process-instance/' + responseId + '/variables/cuit',
+      // const response = await axios.put(
+      //   '/api/engine/default/process-instance/' + responseId + '/variables/cuit',
+      //   {
+      //     value: value.cuit,
+      //     type: 'String',
+      //   },
+      //   { headers }
+      // );
+
+      const messageCamunda = await axios.post(
+        '/api/engine/default/message',
         {
-          value: value.cuit,
-          type: 'String',
+          messageName: 'cuitModificado',
+          processInstanceId: responseId,
+          processVariables: {
+            variable_cuit: {
+              value: value.cuit,
+              type: 'String'
+            }
+          }
         },
         { headers }
       );
 
-      console.log(response.data);
+      console.log(messageCamunda);
 
       // Mostrar mensaje de éxito
       message.success('Su CUIT ha sido enviado exitosamente');
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();},2000);
     } catch (error) {
       console.error(error);
     }
@@ -95,7 +112,7 @@ const MyForm = () => {
           const activityInstances = activityInstancesResponse.data.childActivityInstances;
           console.log(activityInstances);
           activityInstances.forEach((element) => {
-            if (element.activityId === 'Activity_16s9fbv') {
+            if (element.activityId === 'Event_17jcjgh') {
               setLoading(false); // Ocultar la ruedita de carga
               setShowSecondForm(true); // Mostrar el segundo formulario
               message.info('Por favor ingrese su CUIT');

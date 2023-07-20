@@ -14,7 +14,7 @@ public class TipoCuenta implements JavaDelegate {
         String tipoCuenta = getFormField(execution, "tipoCuenta");
         String emitirChequera = getFormField(execution, "emitirChequera");
         String nombre = getFormField(execution, "nombre");
-        String cuit = getFormField(execution, "cuit");
+        //String cuit = getFormField(execution, "cuit");
         // String rubro = getFormField(execution, "rubro");
         // String provincia = getFormField(execution, "provincia");
         // String solicitaTD = getFormField(execution, "solicitaTD");
@@ -38,7 +38,7 @@ public class TipoCuenta implements JavaDelegate {
         execution.setVariable("apellido", apellido);
         execution.setVariable("nombre", nombre);
         execution.setVariable("emitirChequera", emitirChequera);
-        execution.setVariable("cuit", cuit);
+        //execution.setVariable("cuit", cuit);
 
         // if (!estaBienElCuit) {
         // execution.setVariable(Variables.FINAL_MESSAGE, "Se trata de un usuario
