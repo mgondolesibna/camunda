@@ -45,7 +45,7 @@ const MyForm = () => {
           messageName: 'cuitModificado',
           processInstanceId: responseId,
           processVariables: {
-            variable_cuit: {
+            cuit: {
               value: value.cuit,
               type: 'String'
             }
