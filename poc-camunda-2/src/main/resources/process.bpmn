@@ -13,7 +13,6 @@
       <bpmn:extensionElements />
       <bpmn:incoming>Flow_08j1f0f</bpmn:incoming>
       <bpmn:outgoing>Flow_00oxa6b</bpmn:outgoing>
-      <bpmn:outgoing>Flow_0ugqm66</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:exclusiveGateway id="Gateway_1qh8yhy" name="¿Que tipo de cuenta es?">
       <bpmn:extensionElements />
@@ -92,7 +91,6 @@
         </camunda:connector>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0s53ysj</bpmn:incoming>
-      <bpmn:incoming>Flow_0ugqm66</bpmn:incoming>
       <bpmn:outgoing>Flow_0k1ihas</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:intermediateCatchEvent id="Event_17jcjgh" name="CUIT Modificado">
@@ -123,7 +121,6 @@
       <bpmn:outgoing>Flow_1opzszm</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_0k1ihas" sourceRef="Activity_0pjk8f1" targetRef="Gateway_1he3bl5" />
-    <bpmn:sequenceFlow id="Flow_0ugqm66" sourceRef="Activity_1heepa3" targetRef="Activity_0pjk8f1" />
   </bpmn:process>
   <bpmn:signal id="Signal_2ptoed1" name="impresionOK" />
   <bpmn:signal id="Signal_10qjcc7" name="reciboCuit" />
@@ -284,12 +281,6 @@
       <bpmndi:BPMNEdge id="Flow_0k1ihas_di" bpmnElement="Flow_0k1ihas">
         <di:waypoint x="830" y="220" />
         <di:waypoint x="855" y="220" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0ugqm66_di" bpmnElement="Flow_0ugqm66">
-        <di:waypoint x="480" y="180" />
-        <di:waypoint x="480" y="130" />
-        <di:waypoint x="780" y="130" />
-        <di:waypoint x="780" y="180" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
